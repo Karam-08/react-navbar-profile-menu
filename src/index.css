@@ -4,120 +4,179 @@
     --accent-color: #2563eb;
 }
 
-.theme-dark{
-    --bg-color: #111827;
-    --text-color: #e5e7eb;
-    --accent-color: #f59e0b;
-}
-
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 15px;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    border: 5px solid black;
-    text-align: center;
-    transition: 0.3s
+  width: 100%;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border-bottom: 4px solid black;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#img-container{
-    display: flex;
-    justify-content: center;
-}
-
-img{
-  max-width: 60px;
-  margin: 10px 0;
-  border-radius: 100%;
+.logo{
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .menu-toggle{
-    height: 45px;
-    margin: 15px 0;
-    cursor: pointer;
+  background: none;
+  border: 2px solid black;
+  margin: 8px 0 15px 0;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-#menu{
-    height: 25px;
-}
-
-nav ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    align-items: center;
+#main-navigation{
+  width: 100%;
+  margin: 10px;
 }
 
 .toggleHidden{
-    display: none;
+  display: none;
 }
 
-nav ul li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
 nav ul li a{
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    border-color: var(--text-color);
-    padding: 10px 15px;
-    border: 3px solid black;
-    border-radius: 8px;
-    font-weight: bold;
-    margin: 10px;
-    text-decoration: none;
-    transition: 0.3s
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 nav ul li a:hover{
-    background-color: #FFD700;
-    color: black;
-    text-decoration: underline;
+  background-color: #ffde23;
 }
 
-/* Desktop layout */
-@media screen and (min-width: 670px){
-    .menu-toggle{
-        display: none;
-    }
+.active{
+  background-color: #e4c519;
+  color: #000000;
+  border-color: #000000;
+  text-decoration: underline;
+}
 
-    .toggleHidden{
-        display: flex;
-    }
+.active:hover{
+  background-color: #b79f15;
+}
 
-    #profile{
-        margin: 12px 6px 10px;
-    }
+.auth-btns{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
 
-    nav{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 80px;
-    }
+.auth-btns button{
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid black;
+  cursor: pointer;
+}
 
-    nav ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin: 0 20px;
-     }
+.auth-btns .signUp{
+  background-color: #04ff00;
+  color: white;
+}
 
-    nav ul li a{
-        margin: 0 20px;
-        padding: 10px 15px;
-    }
+.profile-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.profile-menu button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-menu img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin: 0;
+}
+
+#profile-dropdown{
+  background-color: var(--bg-color);
+  border: 2px solid black;
+  border-radius: 8px;
+  min-width: 180px;
+}
+
+#profile-dropdown li button{
+  padding: 5px 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#profile-dropdown li button:hover{
+  background-color: #dedede;
+}
+
+@media (min-width: 670px){ /* This is for tablet and desktop view */
+  .menu-toggle{
+    display: none;
+  }
+
+  #main-navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+
+  .toggleHidden{
+    display: flex;
+  }
+
+  nav{
+    flex-direction: row;
+  }
+
+  .logo{
+    text-align: center;
+  }
+
+  nav ul{
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .auth-btns{
+    margin-top: 0;
+  }
+
+  .profile-menu{
+    margin-top: 0;
+    flex-direction: row;
+  }
 }
