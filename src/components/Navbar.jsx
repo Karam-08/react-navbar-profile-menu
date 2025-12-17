@@ -83,18 +83,25 @@ const NavBar = ({navLinks = []}) => {
         <nav>
             <div className="logo">My App</div>
 
-            <button className="menu-toggle" aria-label="Toggle nav menu" aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(!menuOpen)}> {/* This button is for mobile only */}
+            <button 
+                className="menu-toggle" 
+                aria-label="Toggle nav menu" 
+                aria-expanded={menuOpen} 
+                aria-controls="main-navigation" 
+                onClick={() => setMenuOpen(!menuOpen)}
+            > {/* This button is for mobile only */}
                 ☰
             </button>
 
-            <div id="main-navigation" className={`nav-panel ${menuOpen ? "open" : ""}`}> {/* This div contains the nav items and is hidden/shown based on menuOpen state (only applies for mobile) */}
+            <div id="main-navigation" className={`nav-panel ${menuOpen ? "open" : ""}`}> 
+            {/* This div contains the nav items and is hidden/shown based on menuOpen state (only applies for mobile) */}
 
                 <ul>{navItems}</ul>
 
                 {!isLoggedIn &&( // Logged out view
                     <div className="auth-btns">
                         <button onClick={() => setIsLoggedIn(true)}>Login</button> {/* Button for logging in */}
-                        <button className="signUp">Sign Up</button> {/* This is a placeholder button and only does a console.log */}
+                        <button className="signUp">Sign Up</button> {/* This is a placeholder button and does absolutely nothing */}
                     </div>
                 )}
 
